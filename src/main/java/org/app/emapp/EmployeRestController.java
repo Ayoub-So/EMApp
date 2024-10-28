@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeRestController {
@@ -27,5 +28,16 @@ public class EmployeRestController {
         //System.out.println(patient.getId()+" "+patient.getNom()+" "+patient.getNum());
         employeService.saveEmploye(employe);
     }
+
+    @DeleteMapping("/deleteEmploye/{id}")
+    public void deleteById(@PathVariable String id) {
+        employeService.deleteEmploye(id);
+    }
+
+    @GetMapping("id/{id}")
+    public Optional<Employe> findById(@PathVariable String id) {
+        return employeService.findById(id);
+    }
+
 
 }

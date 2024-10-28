@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeService {
@@ -23,11 +24,16 @@ public class EmployeService {
 
     }
 
-    public void deleteEmploye(Employe employee) {
-        employeRepository.delete(employee);
+    public void deleteEmploye(String id) {
+        employeRepository.deleteById(id);
     }
 
     public Employe getEmploye(String id) {
         return employeRepository.getReferenceById(id);
     }
+
+    public Optional<Employe> findById(String id) {
+        return employeRepository.findById(id);
+    }
+
 }
