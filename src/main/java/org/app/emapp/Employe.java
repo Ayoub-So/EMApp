@@ -2,7 +2,11 @@ package org.app.emapp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 public class Employe {
 
@@ -11,7 +15,7 @@ public class Employe {
     private String nom;
 
 
-    public Employe(String id, String nom, String num) {
+    public Employe(String id, String nom) {
         this.id = id;
         this.nom = nom;
     }
@@ -20,21 +24,5 @@ public class Employe {
 
     }
 
-    public String getNom() {
-        return nom;
-    }
 
-
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
 }

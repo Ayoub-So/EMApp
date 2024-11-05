@@ -24,8 +24,7 @@ public class EmployeRestController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/addEmploye")
-    public void addPatient(@RequestBody Employe employe){
-        //System.out.println(patient.getId()+" "+patient.getNom()+" "+patient.getNum());
+    public void addEmploye(@RequestBody Employe employe){
         employeService.saveEmploye(employe);
     }
 
@@ -34,7 +33,7 @@ public class EmployeRestController {
         employeService.deleteEmploye(id);
     }
 
-    @GetMapping("id/{id}")
+    @GetMapping("/getEmploye/{id}")
     public Optional<Employe> findById(@PathVariable String id) {
         return employeService.findById(id);
     }
