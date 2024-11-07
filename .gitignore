@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Backend ignores
+node_modules/
+.env
+
+# Frontend ignores
+front-end-nextjs/node_modules
+front-end-nextjs/.next
+front-end-nextjs/.env
